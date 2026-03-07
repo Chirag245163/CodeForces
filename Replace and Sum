@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+int main()
+{int t;
+  cin>>t;
+  for(int i=0;i<t;i++){
+     int n;
+    cin >> n;
+    int q;
+    cin >> q;
+
+    int arr[n];
+    int brr[n];
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cin >> brr[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+        if (i == n - 1)
+        {
+            if (arr[i] < brr[i])
+            {
+                arr[i] = brr[i];
+            }
+        }
+        else
+        {
+            if (arr[i] < brr[i] || arr[i] < arr[i + 1])
+            {
+                if (arr[i + 1] < brr[i])
+                {
+                    arr[i] = brr[i];
+                }
+                else
+                {
+                    arr[i] = arr[i + 1];
+                }
+            }
+        }
+        if (i>0&&arr[i] > arr[i - 1])
+        {
+            arr[i - 1] = arr[i];
+        }
+    }
+    for (int i = 0; i < q; i++)
+    {
+        int l;
+        cin >> l;
+        int r;
+        cin >> r;
+        sum = 0;
+        for (int j = l - 1; j < r; j++)
+        {
+            sum += arr[j];
+        }
+        cout << sum << endl;
+    }
+}
+}

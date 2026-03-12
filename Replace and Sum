@@ -1,4 +1,7 @@
 #include <iostream>
+#include<vector>
+#include<algorithm>
+#include<cmath>
 using namespace std;
 int main()
 {int t;
@@ -9,8 +12,8 @@ int main()
     int q;
     cin >> q;
 
-    int arr[n];
-    int brr[n];
+    vector<int> arr(n);
+    vector<int> brr(n);
     int sum = 0;
     for (int i = 0; i < n; i++)
     {
@@ -57,7 +60,7 @@ int main()
         sum = 0;
         for (int j = l - 1; j < r; j++)
         {
-            sum += arr[j];
+            sum = sum + arr[j];
         }
         cout << sum << endl;
     }
